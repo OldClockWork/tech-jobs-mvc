@@ -10,6 +10,21 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
+    <h2 th:text="${count} + ' ' + Results"></h2>
+
+    <table th:each="c : ${jobs}">
+        <tr th:each="kv:${c}">
+            <td th:text="${#strings.capitalizeWords(kv.key)}" style="font-weight:bold"></td>
+            <td th:text="${kv.value}"></td>
+        </tr>
+        <br/>
+        <br/>
+        <br/>
+    </table>
+
+
+
+
     <!-- TODO #3 - Use the same list display from search.html -->
 
 </div>

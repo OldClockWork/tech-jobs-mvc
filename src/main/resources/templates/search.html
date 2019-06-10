@@ -36,6 +36,18 @@
 
     <hr />
 
+    <h2 th:if="${count != null}" th:text="${count} + ' ' + Results"></h2>
+
+    <table th:each="c : ${jobs}">
+        <tr th:each="kv:${c}">
+            <td th:text="${#strings.capitalizeWords(kv.key)}" style="font-weight:bold"></td>
+            <td th:text="${kv.value}"></td>
+        </tr>
+        <br/>
+        <br/>
+        <br/>
+    </table>
+
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
 </div>
